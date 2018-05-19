@@ -15,7 +15,21 @@ class ToxModel {
     
     var latestAvailableStatus : ToxStatus?
     
-    func getStates(/*statusHandler : @escaping (ToxStatus) -> Void*/) {
+    
+    static let shared = ToxModel()
+    
+    private init() { }
+    
+    public func startModel() {
+        startPingingServer()
+        setTimerForUpdateSignals()
+    }
+    public func stopModel() {
+        freeTimerForPing()
+        freeTimerForSignals()
+    }
+    
+    private func getStates(/*statusHandler : @escaping (ToxStatus) -> Void*/) {
         let urlString = "\(baseUrl)/STATUS/GETALL"
         guard let url = URL(string: urlString) else { print("Errore url: \(urlString)"); return }
         
@@ -34,8 +48,20 @@ class ToxModel {
         }.resume()
     }
     
+    private var timer : Timer?
+    public func setTimerForUpdateSignals(_ time: Double = 10.0) {
+        self.getStates()
+        timer = Timer.scheduledTimer(withTimeInterval: time, repeats: true, block: { [weak self] (timer) in
+            self?.getStates()
+            print("Segnali ottenuti")
+        })
+    }
+    public func freeTimerForSignals() {
+        timer?.invalidate()
+        timer = nil
+    }
     
-    func performActionOnDevice(device: ToxDevices) {
+    public func performActionOnDevice(device: ToxDevices) {
         
         let base = baseUrl
         guard let trailingUrl = ToxUrls[device] else {
@@ -44,6 +70,7 @@ class ToxModel {
         }
         
         let finalUrlString = "\(base)/\(trailingUrl)"
+        print(finalUrlString)
         guard let url = URL(string: finalUrlString) else {
             print("Errore url: \(finalUrlString)")
             return
@@ -52,12 +79,42 @@ class ToxModel {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let response = response as? HTTPURLResponse {
-                print(response.statusCode)
+                print("ACTION RESPONSE CODE: \(response.statusCode)")
             }
             
             
         }.resume()
         
         
+    }
+    
+    
+    private func ping() {
+        let base = baseUrl
+        let offset = "/ping"
+        let urlString = "\(base)/\(offset)"
+        
+        guard let url = URL(string: urlString) else {
+            print("Errore url ping: \(urlString)")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let response = response as? HTTPURLResponse {
+                print("PING: \(response.statusCode)")
+            }
+        }.resume()
+        
+        
+    }
+    private var pingTimer : Timer?
+    private func startPingingServer() {
+        pingTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self] (timer) in
+            self?.ping()
+        })
+    }
+    private func freeTimerForPing() {
+        pingTimer?.invalidate()
+        pingTimer = nil
     }
 }

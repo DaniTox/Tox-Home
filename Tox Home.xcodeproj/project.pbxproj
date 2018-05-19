@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB3CFB8220B06D5600298208 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CFB8120B06D5600298208 /* SettingsVC.swift */; };
+		DB3CFB8520B0720100298208 /* ChangeIPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CFB8420B0720100298208 /* ChangeIPVC.swift */; };
 		DB5BD60820A70405005F46DD /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BD60720A70405005F46DD /* Contants.swift */; };
 		DB5BD60A20A75E17005F46DD /* ToxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BD60920A75E17005F46DD /* ToxModel.swift */; };
 		DBB67AB420A0FE6A001FE6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB67AB320A0FE6A001FE6D8 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB3CFB8120B06D5600298208 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		DB3CFB8420B0720100298208 /* ChangeIPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIPVC.swift; sourceTree = "<group>"; };
 		DB5BD60720A70405005F46DD /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		DB5BD60920A75E17005F46DD /* ToxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToxModel.swift; sourceTree = "<group>"; };
 		DBB67AB020A0FE6A001FE6D8 /* Tox Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tox Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB3CFB8320B071DE00298208 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DB3CFB8120B06D5600298208 /* SettingsVC.swift */,
+				DB3CFB8420B0720100298208 /* ChangeIPVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		DBB67AA720A0FE6A001FE6D8 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +85,7 @@
 		DBB67AC520A0FF48001FE6D8 /* ViewConttrollers */ = {
 			isa = PBXGroup;
 			children = (
+				DB3CFB8320B071DE00298208 /* Settings */,
 				DBB67AB520A0FE6A001FE6D8 /* HomeVC.swift */,
 			);
 			path = ViewConttrollers;
@@ -170,6 +184,8 @@
 				DBB67AB620A0FE6A001FE6D8 /* HomeVC.swift in Sources */,
 				DBB67AB420A0FE6A001FE6D8 /* AppDelegate.swift in Sources */,
 				DB5BD60820A70405005F46DD /* Contants.swift in Sources */,
+				DB3CFB8220B06D5600298208 /* SettingsVC.swift in Sources */,
+				DB3CFB8520B0720100298208 /* ChangeIPVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

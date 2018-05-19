@@ -10,30 +10,40 @@ import UIKit
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var homeView = HomeView()
-    let model = ToxModel()
+    let model = ToxModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Home"
         
+        let barButton = UIBarButtonItem(title: "Test", style: .done, target: self, action: #selector(openNewController))
+        navigationItem.setRightBarButton(barButton, animated: true)
         
         model.statusCompletion = { [weak self] (toxStatus) in
-            toxStatus.printAll()
+            print("HomeVC ha ottenuto i nuovi parametri")
             DispatchQueue.main.async {
                 self?.homeView.tableView.reloadData()
             }
         }
         
-        model.actionCompletion = { [weak self] in
-            self?.model.getStates()
-        }
-        
-        
-        model.getStates()
-        
-        model.performActionOnDevice(device: .luceCucinaSetOn)
+
+    }
+    
+    
+    @objc private func openNewController() {
+        let vc = SettingsVC()
+        navigationController?.pushViewController(vc, animated: true )
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        homeView.tableView.reloadData()
+        model.startModel()
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        model.stopModel()
+    }
     override func loadView() {        
         view = homeView
         homeView.tableView.delegate = self
@@ -53,7 +63,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 7
+            return 8
         default:
             return 0
         }
@@ -92,15 +102,27 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }()
     
     @objc private func setLuceCamera(_ sender: UISwitch) {
-        print(sender.isOn)
+        if sender.isOn {
+            model.performActionOnDevice(device: .luceCameraSetOn)
+        } else {
+            model.performActionOnDevice(device: .luceCameraSetOff)
+        }
     }
     
     @objc private func setLuceSala(_ sender: UISwitch) {
-        print(sender.isOn)
+        if sender.isOn {
+            model.performActionOnDevice(device: .luceSalaSetOn)
+        } else {
+            model.performActionOnDevice(device: .luceSalaSetOff)
+        }
     }
     
     @objc private func setLuceCucina(_ sender: UISwitch) {
-        print(sender.isOn)
+        if sender.isOn {
+            model.performActionOnDevice(device: .luceCucinaSetOn)
+        } else {
+            model.performActionOnDevice(device: .luceCucinaSetOff)
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -119,42 +141,66 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case 1:
             switch indexPath.row {
             case 0:
-                title = "Allarme"
+                title = "Porta"
                 cell.accessoryType = .disclosureIndicator
             case 1:
+                title = "Allarme"
+                cell.accessoryType = .disclosureIndicator
+            case 2:
                 title = "Luce Camera"
                 let luceSwitch = UISwitch()
+                if let status = model.latestAvailableStatus {
+                    if status.luceCamera == 1 {
+                        luceSwitch.isOn = true
+                    } else {
+                        luceSwitch.isOn = false
+                    }
+                }
                 luceSwitch.addTarget(self, action: #selector(setLuceCamera(_:)), for: .valueChanged)
                 luceSwitch.translatesAutoresizingMaskIntoConstraints = false
                 cell.addSubview(luceSwitch)
                 luceSwitch.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
                 luceSwitch.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
-            case 2:
+            case 3:
                 title = "Luce Sala"
                 let luceSwitch = UISwitch()
+                if let status = model.latestAvailableStatus {
+                    if status.luceSala == 1 {
+                        luceSwitch.isOn = true
+                    } else {
+                        luceSwitch.isOn = false
+                    }
+                }
                 luceSwitch.addTarget(self, action: #selector(setLuceSala(_:)), for: .valueChanged)
                 luceSwitch.translatesAutoresizingMaskIntoConstraints = false
                 cell.addSubview(luceSwitch)
                 luceSwitch.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
                 luceSwitch.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
-            case 3:
+            case 4:
                 title = "Luce Cucina"
                 let luceSwitch = UISwitch()
+                if let status = model.latestAvailableStatus {
+                    if status.luceCucina == 1 {
+                        luceSwitch.isOn = true
+                    } else {
+                        luceSwitch.isOn = false
+                    }
+                }
                 luceSwitch.addTarget(self, action: #selector(setLuceCucina(_:)), for: .valueChanged)
                 luceSwitch.translatesAutoresizingMaskIntoConstraints = false
                 cell.addSubview(luceSwitch)
                 luceSwitch.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
                 luceSwitch.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
-            case 4:
+            case 5:
                 title = "Condizionatore"
                 cell.accessoryType = .disclosureIndicator
-            case 5:
+            case 6:
                 title = "Temperatura"
                 temperatureLabel.text = "\(model.latestAvailableStatus?.temperatura ?? 0)° C"
                 cell.addSubview(temperatureLabel)
                 temperatureLabel.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
                 temperatureLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -10).isActive = true
-            case 6:
+            case 7:
                 title = "Videocamera"
                 cell.accessoryType = .disclosureIndicator
             default:
@@ -166,6 +212,29 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                let vc = SettingsVC()
+                navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                break
+            default:
+                break
+            }
+        default:
+            break
+        }
     }
     
 }
