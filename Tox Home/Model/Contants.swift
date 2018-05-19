@@ -17,6 +17,16 @@ var baseUrl : String {
     }
 }
 
+var isPortaLocked : Bool {
+    get {
+        return UserDefaults.standard.bool(forKey: "isPortaLocked")
+    }
+    set {
+        UserDefaults.standard.set(newValue, forKey: "isPortaLocked")
+    }
+}
+
+
 class ToxStatus : Codable {
     
     var luceSala : Int
@@ -44,6 +54,7 @@ class ToxStatus : Codable {
 let ToxUrls : [ToxDevices : String] = [
     .doorLockState : "DOOR/state",
     .doorLockOpen : "DOOR/open",
+    .doorLockClose : "DOOR/close",
     
     .temperatura : "TEMPERATURA/get",
     
@@ -63,6 +74,7 @@ enum ToxDevices  {
     
     case doorLockState
     case doorLockOpen
+    case doorLockClose
     
 //    case ventolaState = ""
 //    case ventolaSetOn = ""
@@ -86,4 +98,11 @@ enum ToxDevices  {
     
     static let allValues = [doorLockState, doorLockOpen, temperatura, luceCameraState, luceCameraSetOn, luceCameraSetOff, luceSalaState, luceSalaSetOn, luceSalaSetOff, luceCucinaState, luceCucinaSetOn, luceCucinaSetOff]
 }
+
+
+
+
+
+
+
 

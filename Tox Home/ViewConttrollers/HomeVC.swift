@@ -143,6 +143,18 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             case 0:
                 title = "Porta"
                 cell.accessoryType = .disclosureIndicator
+                
+                let label = UILabel()
+                label.text = (isPortaLocked) ? "Bloccata" : "Sbloccata"
+                label.textAlignment = .right
+                label.textColor = .lightGray
+                label.translatesAutoresizingMaskIntoConstraints = false
+                cell.addSubview(label)
+                label.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -30).isActive = true
+                label.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 0).isActive = true
+                label.widthAnchor.constraint(equalToConstant: 150).isActive = true
+                
+                
             case 1:
                 title = "Allarme"
                 cell.accessoryType = .disclosureIndicator
@@ -228,7 +240,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         case 1:
             switch indexPath.row {
             case 0:
-                break
+                let vc = PortaVC()
+                navigationController?.pushViewController(vc, animated: true)
             default:
                 break
             }

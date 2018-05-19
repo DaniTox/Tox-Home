@@ -43,13 +43,16 @@ class ToxModel {
             }
             
             self?.latestAvailableStatus = json
+            isPortaLocked = (json.door == 0) ? true : false
+            
+            
             self?.statusCompletion?(json)
             
         }.resume()
     }
     
     private var timer : Timer?
-    public func setTimerForUpdateSignals(_ time: Double = 10.0) {
+    public func setTimerForUpdateSignals(_ time: Double = 7.0) {
         self.getStates()
         timer = Timer.scheduledTimer(withTimeInterval: time, repeats: true, block: { [weak self] (timer) in
             self?.getStates()
@@ -91,7 +94,7 @@ class ToxModel {
     
     private func ping() {
         let base = baseUrl
-        let offset = "/ping"
+        let offset = "ping"
         let urlString = "\(base)/\(offset)"
         
         guard let url = URL(string: urlString) else {

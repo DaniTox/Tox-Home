@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DB3CFB8220B06D5600298208 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CFB8120B06D5600298208 /* SettingsVC.swift */; };
 		DB3CFB8520B0720100298208 /* ChangeIPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CFB8420B0720100298208 /* ChangeIPVC.swift */; };
+		DB3CFB8820B07CBD00298208 /* PortaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CFB8720B07CBD00298208 /* PortaVC.swift */; };
 		DB5BD60820A70405005F46DD /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BD60720A70405005F46DD /* Contants.swift */; };
 		DB5BD60A20A75E17005F46DD /* ToxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BD60920A75E17005F46DD /* ToxModel.swift */; };
 		DBB67AB420A0FE6A001FE6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB67AB320A0FE6A001FE6D8 /* AppDelegate.swift */; };
@@ -16,11 +17,13 @@
 		DBB67ABB20A0FE6A001FE6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB67ABA20A0FE6A001FE6D8 /* Assets.xcassets */; };
 		DBB67ABE20A0FE6A001FE6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB67ABC20A0FE6A001FE6D8 /* LaunchScreen.storyboard */; };
 		DBB67AC920A0FF8A001FE6D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB67AC820A0FF8A001FE6D8 /* HomeView.swift */; };
+		DBD1F31020B0898B00FA46DD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1F30F20B0898B00FA46DD /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB3CFB8120B06D5600298208 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		DB3CFB8420B0720100298208 /* ChangeIPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeIPVC.swift; sourceTree = "<group>"; };
+		DB3CFB8720B07CBD00298208 /* PortaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortaVC.swift; sourceTree = "<group>"; };
 		DB5BD60720A70405005F46DD /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		DB5BD60920A75E17005F46DD /* ToxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToxModel.swift; sourceTree = "<group>"; };
 		DBB67AB020A0FE6A001FE6D8 /* Tox Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tox Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +33,7 @@
 		DBB67ABD20A0FE6A001FE6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBB67ABF20A0FE6A001FE6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB67AC820A0FF8A001FE6D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DBD1F30F20B0898B00FA46DD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,14 @@
 				DB3CFB8420B0720100298208 /* ChangeIPVC.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		DB3CFB8620B07CA800298208 /* Apparecchiature */ = {
+			isa = PBXGroup;
+			children = (
+				DB3CFB8720B07CBD00298208 /* PortaVC.swift */,
+			);
+			path = Apparecchiature;
 			sourceTree = "<group>";
 		};
 		DBB67AA720A0FE6A001FE6D8 = {
@@ -85,6 +97,7 @@
 		DBB67AC520A0FF48001FE6D8 /* ViewConttrollers */ = {
 			isa = PBXGroup;
 			children = (
+				DB3CFB8620B07CA800298208 /* Apparecchiature */,
 				DB3CFB8320B071DE00298208 /* Settings */,
 				DBB67AB520A0FE6A001FE6D8 /* HomeVC.swift */,
 			);
@@ -104,6 +117,7 @@
 			children = (
 				DB5BD60720A70405005F46DD /* Contants.swift */,
 				DB5BD60920A75E17005F46DD /* ToxModel.swift */,
+				DBD1F30F20B0898B00FA46DD /* Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBD1F31020B0898B00FA46DD /* Extension.swift in Sources */,
 				DBB67AC920A0FF8A001FE6D8 /* HomeView.swift in Sources */,
 				DB5BD60A20A75E17005F46DD /* ToxModel.swift in Sources */,
 				DBB67AB620A0FE6A001FE6D8 /* HomeVC.swift in Sources */,
@@ -186,6 +201,7 @@
 				DB5BD60820A70405005F46DD /* Contants.swift in Sources */,
 				DB3CFB8220B06D5600298208 /* SettingsVC.swift in Sources */,
 				DB3CFB8520B0720100298208 /* ChangeIPVC.swift in Sources */,
+				DB3CFB8820B07CBD00298208 /* PortaVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
