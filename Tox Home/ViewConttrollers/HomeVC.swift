@@ -158,6 +158,26 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             case 1:
                 title = "Allarme"
                 cell.accessoryType = .disclosureIndicator
+                
+                let label = UILabel()
+                switch ToxModel.shared.latestAvailableStatus?.allarme ?? 3 {
+                case 0, 1, 2:
+                    label.text = "In allerta..."
+                case 3:
+                    label.text = "Disarmata"
+                case 4:
+                    label.text = "IN ALLARME!!!"
+                    label.textColor = .red
+                default: break
+                }
+                label.textAlignment = .right
+                label.textColor = .lightGray
+                label.translatesAutoresizingMaskIntoConstraints = false
+                cell.addSubview(label)
+                label.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -30).isActive = true
+                label.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 0).isActive = true
+                label.widthAnchor.constraint(equalToConstant: 150).isActive = true
+                
             case 2:
                 title = "Luce Camera"
                 let luceSwitch = UISwitch()
@@ -241,6 +261,9 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 let vc = PortaVC()
+                navigationController?.pushViewController(vc, animated: true)
+            case 1:
+                let vc = AllarmeVC()
                 navigationController?.pushViewController(vc, animated: true)
             default:
                 break

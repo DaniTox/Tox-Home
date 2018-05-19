@@ -18,6 +18,7 @@
 		DBB67ABE20A0FE6A001FE6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBB67ABC20A0FE6A001FE6D8 /* LaunchScreen.storyboard */; };
 		DBB67AC920A0FF8A001FE6D8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB67AC820A0FF8A001FE6D8 /* HomeView.swift */; };
 		DBD1F31020B0898B00FA46DD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1F30F20B0898B00FA46DD /* Extension.swift */; };
+		DBD1F31220B0ACB300FA46DD /* AllarmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1F31120B0ACB300FA46DD /* AllarmeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		DBB67ABF20A0FE6A001FE6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB67AC820A0FF8A001FE6D8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DBD1F30F20B0898B00FA46DD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		DBD1F31120B0ACB300FA46DD /* AllarmeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllarmeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				DB3CFB8720B07CBD00298208 /* PortaVC.swift */,
+				DBD1F31120B0ACB300FA46DD /* AllarmeVC.swift */,
 			);
 			path = Apparecchiature;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				DB3CFB8220B06D5600298208 /* SettingsVC.swift in Sources */,
 				DB3CFB8520B0720100298208 /* ChangeIPVC.swift in Sources */,
 				DB3CFB8820B07CBD00298208 /* PortaVC.swift in Sources */,
+				DBD1F31220B0ACB300FA46DD /* AllarmeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q5WYV8U42F;
 				INFOPLIST_FILE = "Tox Home/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danitox.Tox-Home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -348,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q5WYV8U42F;
 				INFOPLIST_FILE = "Tox Home/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.danitox.Tox-Home";
 				PRODUCT_NAME = "$(TARGET_NAME)";

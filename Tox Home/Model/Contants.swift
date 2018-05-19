@@ -68,7 +68,10 @@ let ToxUrls : [ToxDevices : String] = [
     
     .luceCucinaState : "LUCE_CUCINA/state",
     .luceCucinaSetOn : "LUCE_CUCINA/setON",
-    .luceCucinaSetOff : "LUCE_CUCINA/setOFF"
+    .luceCucinaSetOff : "LUCE_CUCINA/setOFF",
+    
+    .allarmeDisarma : "ALLARME/disarma",
+    .allarmeArma : "ALLARME/arma_1"
 ]
 enum ToxDevices  {
     
@@ -95,8 +98,10 @@ enum ToxDevices  {
     case luceCucinaSetOff
     
 //    case camera = ""
+    case allarmeArma
+    case allarmeDisarma
     
-    static let allValues = [doorLockState, doorLockOpen, temperatura, luceCameraState, luceCameraSetOn, luceCameraSetOff, luceSalaState, luceSalaSetOn, luceSalaSetOff, luceCucinaState, luceCucinaSetOn, luceCucinaSetOff]
+    static let allValues = [doorLockState, doorLockOpen, temperatura, luceCameraState, luceCameraSetOn, luceCameraSetOff, luceSalaState, luceSalaSetOn, luceSalaSetOff, luceCucinaState, luceCucinaSetOn, luceCucinaSetOff, allarmeArma, allarmeDisarma]
 }
 
 
