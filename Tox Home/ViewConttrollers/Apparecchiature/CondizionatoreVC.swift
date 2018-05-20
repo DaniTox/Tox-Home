@@ -40,8 +40,11 @@ class CondizionatoreVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
-    
-    
+    @objc private func stepperDidChangeValue(_ sender: UIStepper) {
+        minTemperature = Int(sender.value)
+        temperatureLabel.text = "\(Int(sender.value))° C"
+    }
+    var temperatureLabel : UILabel = UILabel()
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
@@ -64,12 +67,45 @@ class CondizionatoreVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         case 1:
             if condizionatoreMode == .dynamicMode {
-                 cell.textLabel?.text = "Temperatura minima:"
                 
-                let textField = UITextField()
-                
-                cell.addSubview(textField)
-                
+                switch indexPath.row {
+                case 0:
+                    cell.textLabel?.text = "Temperatura minima:"
+                    
+                    temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
+                    temperatureLabel.text = "\(minTemperature)° C"
+                    temperatureLabel.textColor = .lightGray
+                    cell.addSubview(temperatureLabel)
+                    temperatureLabel.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -30).isActive = true
+                    temperatureLabel.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
+                    
+                    
+                    
+                    
+                    let stepper = UIStepper()
+                    stepper.value = Double(minTemperature)
+                    stepper.translatesAutoresizingMaskIntoConstraints = false
+                    stepper.addTarget(self, action: #selector(stepperDidChangeValue(_:)), for: .valueChanged)
+                    cell.addSubview(stepper)
+                    stepper.trailingAnchor.constraint(equalTo: temperatureLabel.leadingAnchor, constant: -10).isActive = true
+                    stepper.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
+                    
+                case 1:
+                    cell.textLabel?.text = "Temperatura attuale"
+                    
+                    let temperature = ToxModel.shared.latestAvailableStatus?.temperatura ?? 0
+                    
+                    let label = UILabel()
+                    label.textColor = .lightGray
+                    label.translatesAutoresizingMaskIntoConstraints = false
+                    label.text = "\(temperature)° C"
+                    cell.addSubview(label)
+                    label.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -30).isActive = true
+                    label.centerYAnchor.constraint(equalTo: cell.centerYAnchor, constant: 0).isActive = true
+                    
+                    
+                default: break
+                }
                 
             } else {
                 cell.textLabel?.text = "Attiva/Disattiva"
@@ -109,6 +145,9 @@ class CondizionatoreVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         case 0:
             return 2
         case 1:
+            if condizionatoreMode == .dynamicMode {
+                return 2
+            }
             return 1
         default:
             return 0

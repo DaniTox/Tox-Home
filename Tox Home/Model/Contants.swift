@@ -36,6 +36,16 @@ var isFanDynamic : Bool {
     }
 }
 
+
+var minTemperature : Int {
+    get {
+        return UserDefaults.standard.integer(forKey: "minTemp")
+    }
+    set {
+        UserDefaults.standard.set(newValue, forKey: "minTemp")
+    }
+}
+
 enum CondizionatoreMode {
     case staticMode
     case dynamicMode
