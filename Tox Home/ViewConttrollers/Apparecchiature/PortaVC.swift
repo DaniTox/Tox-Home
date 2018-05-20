@@ -102,7 +102,7 @@ class PortaVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             label.widthAnchor.constraint(equalToConstant: 200).isActive = true
             
         case 1:
-            cell.textLabel?.text = (isPortaLocked == true) ? "Sblocca (con codice/Touch ID" : "Blocca"
+            cell.textLabel?.text = (isPortaLocked == true) ? "Sblocca (con codice/Touch ID)" : "Blocca"
             cell.textLabel?.textAlignment = .center
             cell.textLabel?.textColor = UIColor.blue.lighter()
         default:

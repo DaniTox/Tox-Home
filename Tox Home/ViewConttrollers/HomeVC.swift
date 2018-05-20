@@ -226,6 +226,14 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             case 5:
                 title = "Condizionatore"
                 cell.accessoryType = .disclosureIndicator
+                
+                let label = UILabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.text = (model.latestAvailableStatus?.ventola == 1) ? "Acceso" : "Spento"
+                label.textColor = .lightGray
+                cell.addSubview(label)
+                label.trailingAnchor.constraint(equalTo: cell.trailingAnchor, constant: -30).isActive = true
+                label.centerYAnchor.constraint(equalTo: cell.centerYAnchor).isActive = true
             case 6:
                 title = "Temperatura"
                 temperatureLabel.text = "\(model.latestAvailableStatus?.temperatura ?? 0)° C"
@@ -264,6 +272,9 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 navigationController?.pushViewController(vc, animated: true)
             case 1:
                 let vc = AllarmeVC()
+                navigationController?.pushViewController(vc, animated: true)
+            case 5:
+                let vc = CondizionatoreVC()
                 navigationController?.pushViewController(vc, animated: true)
             default:
                 break

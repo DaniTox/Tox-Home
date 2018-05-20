@@ -27,6 +27,21 @@ var isPortaLocked : Bool {
 }
 
 
+var isFanDynamic : Bool {
+    get {
+        return UserDefaults.standard.bool(forKey: "isFanDynamic")
+    }
+    set {
+        UserDefaults.standard.set(newValue, forKey: "isFanDynamic")
+    }
+}
+
+enum CondizionatoreMode {
+    case staticMode
+    case dynamicMode
+}
+
+
 class ToxStatus : Codable {
     
     var luceSala : Int
@@ -35,19 +50,21 @@ class ToxStatus : Codable {
     var luceCamera : Int
     var allarme : Int
     var luceCucina : Int
+    var ventola : Int
     
     func printAll() {
         print("LuceSala : \(luceSala)\nTempertaura: \(temperatura)\nDoor: \(door)")
         print("LuceCamera : \(luceCamera)\nAllarme: \(allarme)\nLuceCucina: \(luceCucina)")
     }
     
-    init(luceSala : Int, temp : Int, door: Int, luceCamera: Int, allarme: Int, luceCucina: Int) {
+    init(luceSala : Int, temp : Int, door: Int, luceCamera: Int, allarme: Int, luceCucina: Int, ventola: Int) {
         self.luceSala = luceSala
         self.temperatura = temp
         self.door = door
         self.luceCamera = luceCamera
         self.allarme = allarme
         self.luceCucina = luceCucina
+        self.ventola = ventola
     }
 }
 
@@ -71,7 +88,11 @@ let ToxUrls : [ToxDevices : String] = [
     .luceCucinaSetOff : "LUCE_CUCINA/setOFF",
     
     .allarmeDisarma : "ALLARME/disarma",
-    .allarmeArma : "ALLARME/arma_1"
+    .allarmeArma : "ALLARME/arma_1",
+    
+    .ventolaAccendi : "VENTOLA/accendi",
+    .ventolaSpegni : "VENTOLA/spegni"
+    
 ]
 enum ToxDevices  {
     
@@ -101,7 +122,10 @@ enum ToxDevices  {
     case allarmeArma
     case allarmeDisarma
     
-    static let allValues = [doorLockState, doorLockOpen, temperatura, luceCameraState, luceCameraSetOn, luceCameraSetOff, luceSalaState, luceSalaSetOn, luceSalaSetOff, luceCucinaState, luceCucinaSetOn, luceCucinaSetOff, allarmeArma, allarmeDisarma]
+    case ventolaAccendi
+    case ventolaSpegni
+    
+    static let allValues = [doorLockState, doorLockOpen, temperatura, luceCameraState, luceCameraSetOn, luceCameraSetOff, luceSalaState, luceSalaSetOn, luceSalaSetOff, luceCucinaState, luceCucinaSetOn, luceCucinaSetOff, allarmeArma, allarmeDisarma, ventolaAccendi, ventolaSpegni]
 }
 
 
