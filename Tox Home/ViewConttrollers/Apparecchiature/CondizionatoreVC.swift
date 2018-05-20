@@ -17,6 +17,14 @@ class CondizionatoreVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Condizionatore"
+        
+        ToxModel.shared.startModel()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        ToxModel.shared.stopModel()
     }
 
     override func loadView() {
@@ -160,13 +168,15 @@ class CondizionatoreVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             case 0:
                 self.condizionatoreMode = .staticMode
                 isFanDynamic = false
+                ToxModel.shared.disableDynamicFanControl()
             case 1:
                 self.condizionatoreMode = .dynamicMode
                 isFanDynamic = true
+                ToxModel.shared.activateDynamicFanControl()
             default:
                 break
             }
-            
+            ToxModel.shared.reloadStates()
             tableView.reloadData()
         }
     }

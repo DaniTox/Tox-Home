@@ -126,6 +126,24 @@ class ToxModel {
 //        })
 //    }
     
+    private func dynamicFanControl() {
+        if (latestAvailableStatus?.temperatura ?? 0) >= minTemperature {
+            performActionOnDevice(device: .ventolaAccendi)
+        } else {
+            performActionOnDevice(device: .ventolaSpegni)
+        }
+    }
+    
+    var fanTimer : Timer?
+    public func activateDynamicFanControl() {
+        fanTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { [weak self] (timer) in
+            self?.dynamicFanControl()
+        })
+    }
+    public func disableDynamicFanControl() {
+        fanTimer?.invalidate()
+        fanTimer = nil
+    }
     
     private func ping() {
         let base = baseUrl
