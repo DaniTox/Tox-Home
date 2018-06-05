@@ -276,6 +276,25 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             case 5:
                 let vc = CondizionatoreVC()
                 navigationController?.pushViewController(vc, animated: true)
+            case 7:
+                
+                let alert = UIAlertController(title: "Indirizzo IP", message: "Inserisci l'indirizzo IP del raspberry Pi con la porta. (8085)", preferredStyle: .alert)
+                alert.addTextField { (textField) in
+                    textField.text = "192.168.1.2:8085"
+                }
+                let action = UIAlertAction(title: "Vai", style: .cancel) { (action) in
+                    DispatchQueue.main.async { [weak self] in
+                        
+                        let address = alert.textFields![0].text
+                        
+                        let vc = VideoCameraVC()
+                        vc.urlB = address ?? "192.168.1.2:8085"
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+                alert.addAction(action)
+                self.present(alert, animated: true, completion: nil)
+
             default:
                 break
             }

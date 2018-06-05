@@ -12,6 +12,7 @@
 		DB3CFB8820B07CBD00298208 /* PortaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3CFB8720B07CBD00298208 /* PortaVC.swift */; };
 		DB5BD60820A70405005F46DD /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BD60720A70405005F46DD /* Contants.swift */; };
 		DB5BD60A20A75E17005F46DD /* ToxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BD60920A75E17005F46DD /* ToxModel.swift */; };
+		DBB285A520C6FD9200BA1114 /* VideoCameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB285A420C6FD9200BA1114 /* VideoCameraVC.swift */; };
 		DBB67AB420A0FE6A001FE6D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB67AB320A0FE6A001FE6D8 /* AppDelegate.swift */; };
 		DBB67AB620A0FE6A001FE6D8 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB67AB520A0FE6A001FE6D8 /* HomeVC.swift */; };
 		DBB67ABB20A0FE6A001FE6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBB67ABA20A0FE6A001FE6D8 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		DB3CFB8720B07CBD00298208 /* PortaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortaVC.swift; sourceTree = "<group>"; };
 		DB5BD60720A70405005F46DD /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		DB5BD60920A75E17005F46DD /* ToxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToxModel.swift; sourceTree = "<group>"; };
+		DBB285A420C6FD9200BA1114 /* VideoCameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCameraVC.swift; sourceTree = "<group>"; };
 		DBB67AB020A0FE6A001FE6D8 /* Tox Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tox Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBB67AB320A0FE6A001FE6D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBB67AB520A0FE6A001FE6D8 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				DB3CFB8720B07CBD00298208 /* PortaVC.swift */,
 				DBD1F31120B0ACB300FA46DD /* AllarmeVC.swift */,
 				DBD1F31320B19E9A00FA46DD /* CondizionatoreVC.swift */,
+				DBB285A420C6FD9200BA1114 /* VideoCameraVC.swift */,
 			);
 			path = Apparecchiature;
 			sourceTree = "<group>";
@@ -155,7 +158,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Dani Tox";
 				TargetAttributes = {
 					DBB67AAF20A0FE6A001FE6D8 = {
@@ -210,6 +213,7 @@
 				DB3CFB8520B0720100298208 /* ChangeIPVC.swift in Sources */,
 				DB3CFB8820B07CBD00298208 /* PortaVC.swift in Sources */,
 				DBD1F31220B0ACB300FA46DD /* AllarmeVC.swift in Sources */,
+				DBB285A520C6FD9200BA1114 /* VideoCameraVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +245,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -248,6 +253,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -298,6 +304,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -305,6 +312,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
