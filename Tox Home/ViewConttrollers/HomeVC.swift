@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import WatchConnectivity
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var homeView = HomeView()
     let model = ToxModel.shared
+    
+    let session = WCSession.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-
+        session.delegate = self
     }
     
     
@@ -306,3 +309,29 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension HomeVC : WCSessionDelegate {
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("Session did become inactive")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("Session di deactivate")
+    }
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Activation did complete")
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        if let codeReceived = message["activate"] as? Bool {
+            print("iPhone: code received : \(codeReceived)")
+            if codeReceived == true {
+                //TODO: Testa l'impianto
+                model.testAll()
+                
+                replyHandler(["result" : 0])
+            }
+        }
+    }
+    
+}

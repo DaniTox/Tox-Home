@@ -21,7 +21,57 @@
 		DBD1F31020B0898B00FA46DD /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1F30F20B0898B00FA46DD /* Extension.swift */; };
 		DBD1F31220B0ACB300FA46DD /* AllarmeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1F31120B0ACB300FA46DD /* AllarmeVC.swift */; };
 		DBD1F31420B19E9A00FA46DD /* CondizionatoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD1F31320B19E9A00FA46DD /* CondizionatoreVC.swift */; };
+		DBE75EFF20C8627A00046B65 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBE75EFD20C8627A00046B65 /* Interface.storyboard */; };
+		DBE75F0120C8627B00046B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE75F0020C8627B00046B65 /* Assets.xcassets */; };
+		DBE75F0820C8627B00046B65 /* ToxHome Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DBE75F0720C8627B00046B65 /* ToxHome Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DBE75F0D20C8627B00046B65 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE75F0C20C8627B00046B65 /* InterfaceController.swift */; };
+		DBE75F0F20C8627B00046B65 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE75F0E20C8627B00046B65 /* ExtensionDelegate.swift */; };
+		DBE75F1120C8627B00046B65 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE75F1020C8627B00046B65 /* NotificationController.swift */; };
+		DBE75F1320C8627C00046B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBE75F1220C8627C00046B65 /* Assets.xcassets */; };
+		DBE75F1820C8627C00046B65 /* ToxHome.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DBE75EFB20C8627900046B65 /* ToxHome.app */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBE75F0920C8627B00046B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBB67AA820A0FE6A001FE6D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBE75F0620C8627B00046B65;
+			remoteInfo = "ToxHome Extension";
+		};
+		DBE75F1620C8627C00046B65 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBB67AA820A0FE6A001FE6D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBE75EFA20C8627900046B65;
+			remoteInfo = ToxHome;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DBE75F1E20C8627C00046B65 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DBE75F0820C8627B00046B65 /* ToxHome Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE75F2020C8627C00046B65 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DBE75F1820C8627C00046B65 /* ToxHome.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DB3CFB8120B06D5600298208 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -40,10 +90,28 @@
 		DBD1F30F20B0898B00FA46DD /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		DBD1F31120B0ACB300FA46DD /* AllarmeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllarmeVC.swift; sourceTree = "<group>"; };
 		DBD1F31320B19E9A00FA46DD /* CondizionatoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CondizionatoreVC.swift; sourceTree = "<group>"; };
+		DBE75EFB20C8627900046B65 /* ToxHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToxHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE75EFE20C8627A00046B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DBE75F0020C8627B00046B65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBE75F0220C8627B00046B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE75F0720C8627B00046B65 /* ToxHome Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ToxHome Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBE75F0C20C8627B00046B65 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		DBE75F0E20C8627B00046B65 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		DBE75F1020C8627B00046B65 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DBE75F1220C8627C00046B65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBE75F1420C8627C00046B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE75F1520C8627C00046B65 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DBB67AAD20A0FE6A001FE6D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE75F0420C8627B00046B65 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				DBB67AB220A0FE6A001FE6D8 /* Tox Home */,
+				DBE75EFC20C8627A00046B65 /* ToxHome */,
+				DBE75F0B20C8627B00046B65 /* ToxHome Extension */,
 				DBB67AB120A0FE6A001FE6D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				DBB67AB020A0FE6A001FE6D8 /* Tox Home.app */,
+				DBE75EFB20C8627900046B65 /* ToxHome.app */,
+				DBE75F0720C8627B00046B65 /* ToxHome Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +203,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DBE75EFC20C8627A00046B65 /* ToxHome */ = {
+			isa = PBXGroup;
+			children = (
+				DBE75EFD20C8627A00046B65 /* Interface.storyboard */,
+				DBE75F0020C8627B00046B65 /* Assets.xcassets */,
+				DBE75F0220C8627B00046B65 /* Info.plist */,
+			);
+			path = ToxHome;
+			sourceTree = "<group>";
+		};
+		DBE75F0B20C8627B00046B65 /* ToxHome Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DBE75F0C20C8627B00046B65 /* InterfaceController.swift */,
+				DBE75F0E20C8627B00046B65 /* ExtensionDelegate.swift */,
+				DBE75F1020C8627B00046B65 /* NotificationController.swift */,
+				DBE75F1220C8627C00046B65 /* Assets.xcassets */,
+				DBE75F1420C8627C00046B65 /* Info.plist */,
+				DBE75F1520C8627C00046B65 /* PushNotificationPayload.apns */,
+			);
+			path = "ToxHome Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,15 +236,51 @@
 				DBB67AAC20A0FE6A001FE6D8 /* Sources */,
 				DBB67AAD20A0FE6A001FE6D8 /* Frameworks */,
 				DBB67AAE20A0FE6A001FE6D8 /* Resources */,
+				DBE75F2020C8627C00046B65 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DBE75F1720C8627C00046B65 /* PBXTargetDependency */,
 			);
 			name = "Tox Home";
 			productName = "Tox Home";
 			productReference = DBB67AB020A0FE6A001FE6D8 /* Tox Home.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DBE75EFA20C8627900046B65 /* ToxHome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBE75F1F20C8627C00046B65 /* Build configuration list for PBXNativeTarget "ToxHome" */;
+			buildPhases = (
+				DBE75EF920C8627900046B65 /* Resources */,
+				DBE75F1E20C8627C00046B65 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBE75F0A20C8627B00046B65 /* PBXTargetDependency */,
+			);
+			name = ToxHome;
+			productName = ToxHome;
+			productReference = DBE75EFB20C8627900046B65 /* ToxHome.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DBE75F0620C8627B00046B65 /* ToxHome Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBE75F1D20C8627C00046B65 /* Build configuration list for PBXNativeTarget "ToxHome Extension" */;
+			buildPhases = (
+				DBE75F0320C8627B00046B65 /* Sources */,
+				DBE75F0420C8627B00046B65 /* Frameworks */,
+				DBE75F0520C8627B00046B65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ToxHome Extension";
+			productName = "ToxHome Extension";
+			productReference = DBE75F0720C8627B00046B65 /* ToxHome Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -157,12 +288,20 @@
 		DBB67AA820A0FE6A001FE6D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Dani Tox";
 				TargetAttributes = {
 					DBB67AAF20A0FE6A001FE6D8 = {
 						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					DBE75EFA20C8627900046B65 = {
+						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
+					};
+					DBE75F0620C8627B00046B65 = {
+						CreatedOnToolsVersion = 9.4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -181,6 +320,8 @@
 			projectRoot = "";
 			targets = (
 				DBB67AAF20A0FE6A001FE6D8 /* Tox Home */,
+				DBE75EFA20C8627900046B65 /* ToxHome */,
+				DBE75F0620C8627B00046B65 /* ToxHome Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -192,6 +333,23 @@
 			files = (
 				DBB67ABE20A0FE6A001FE6D8 /* LaunchScreen.storyboard in Resources */,
 				DBB67ABB20A0FE6A001FE6D8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE75EF920C8627900046B65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE75F0120C8627B00046B65 /* Assets.xcassets in Resources */,
+				DBE75EFF20C8627A00046B65 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBE75F0520C8627B00046B65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE75F1320C8627C00046B65 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +375,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBE75F0320C8627B00046B65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBE75F1120C8627B00046B65 /* NotificationController.swift in Sources */,
+				DBE75F0F20C8627B00046B65 /* ExtensionDelegate.swift in Sources */,
+				DBE75F0D20C8627B00046B65 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBE75F0A20C8627B00046B65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBE75F0620C8627B00046B65 /* ToxHome Extension */;
+			targetProxy = DBE75F0920C8627B00046B65 /* PBXContainerItemProxy */;
+		};
+		DBE75F1720C8627C00046B65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBE75EFA20C8627900046B65 /* ToxHome */;
+			targetProxy = DBE75F1620C8627C00046B65 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DBB67ABC20A0FE6A001FE6D8 /* LaunchScreen.storyboard */ = {
@@ -226,6 +407,14 @@
 				DBB67ABD20A0FE6A001FE6D8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DBE75EFD20C8627A00046B65 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBE75EFE20C8627A00046B65 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -374,6 +563,84 @@
 			};
 			name = Release;
 		};
+		DBE75F1920C8627C00046B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5WYV8U42F;
+				IBSC_MODULE = ToxHome_Extension;
+				INFOPLIST_FILE = ToxHome/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danitox.Tox-Home.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		DBE75F1A20C8627C00046B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5WYV8U42F;
+				IBSC_MODULE = ToxHome_Extension;
+				INFOPLIST_FILE = ToxHome/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danitox.Tox-Home.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
+		DBE75F1B20C8627C00046B65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5WYV8U42F;
+				INFOPLIST_FILE = "ToxHome Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danitox.Tox-Home.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Debug;
+		};
+		DBE75F1C20C8627C00046B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5WYV8U42F;
+				INFOPLIST_FILE = "ToxHome Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.danitox.Tox-Home.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -391,6 +658,24 @@
 			buildConfigurations = (
 				DBB67AC320A0FE6A001FE6D8 /* Debug */,
 				DBB67AC420A0FE6A001FE6D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBE75F1D20C8627C00046B65 /* Build configuration list for PBXNativeTarget "ToxHome Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBE75F1B20C8627C00046B65 /* Debug */,
+				DBE75F1C20C8627C00046B65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBE75F1F20C8627C00046B65 /* Build configuration list for PBXNativeTarget "ToxHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBE75F1920C8627C00046B65 /* Debug */,
+				DBE75F1A20C8627C00046B65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

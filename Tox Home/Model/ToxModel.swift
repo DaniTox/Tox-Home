@@ -94,37 +94,7 @@ class ToxModel {
     public func reloadStates() {
         self.getStates()
     }
-//    private func getStatusOnlyAbout(device: ToxDevices) {
-//        let base = baseUrl
-//        guard let offset = ToxUrls[device] else {
-//            print("Error url in dict")
-//            return
-//        }
-//
-//        let stringUrl = "\(base)/\(offset)"
-//        guard let url = URL(string: stringUrl) else {
-//            print("errore url: \(stringUrl)")
-//            return
-//        }
-//
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            guard let data = data else { return }
-//
-//            if let val = String(data: data, encoding: .utf8) {
-//                print(val)
-//            }
-//
-//
-//        }.resume()
-//
-//
-//    }
-//    var observeTimer : Timer?
-//    public func startObservingDevice(_ device: ToxDevices) {
-//        observeTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true, block: { [weak self] (timer) in
-//            self?.getStatusOnlyAbout(device: device)
-//        })
-//    }
+
     
     private func dynamicFanControl() {
         if (latestAvailableStatus?.temperatura ?? 0) >= minTemperature {
@@ -173,4 +143,17 @@ class ToxModel {
         pingTimer?.invalidate()
         pingTimer = nil
     }
+    
+    
+    public func testAll() {
+        let urlString = "\(baseUrl)/impianto/test"
+        guard let url = URL(string: urlString) else { print("ERROR: \(urlString)"); return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let res = response as? HTTPURLResponse, res.statusCode == 200 {
+                print("testAll REQUEST was sent with no error")
+            }
+        }.resume()
+    }
+    
 }
